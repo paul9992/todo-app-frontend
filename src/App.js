@@ -16,8 +16,9 @@ class App extends Component {
   render() {
     return (
 
-      <div className="container">
-        {/* Harriet's example on Slack has the above as className="App" - which is defined in App.css - which is preferred/correct? */}
+      <div className="App">
+        {/* Harriet's example on Slack has the above as className="App" - it was originally 'container' in last week's class */}
+        {/* class 'App' which is defined in App.css and I have added styles in there ... which is preferred/correct? */}
 
         {/* Display Header line(s) */}
         {

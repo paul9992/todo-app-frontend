@@ -4,6 +4,8 @@ class ListTask extends Component {
 
   render() {
     return (
+      <div className="container">
+
       <div className="row" id="task-table-area">
 
         <div className="col-sm-4 col-md-6">
@@ -24,6 +26,7 @@ class ListTask extends Component {
 
       </div>
 
+</div>
     );
   }
 }

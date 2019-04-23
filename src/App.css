@@ -1,11 +1,18 @@
 /* import Google Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Roboto Slab');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto Slab'); */
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 
 .App {
   text-align: center;
+
+  /* put this in from 'body' section of old styles.css */
+  color: rgb(0, 0, 0);
+  background-image: url("https://www.richardsonsholidayparks.co.uk/wp-content/uploads/2018/04/ThigsToDoHeaderTitle.png");
+  background-repeat: no-repeat;
+  font-family: 'Oswald', Courier, monospace;
 }
 
 .App-logo {
@@ -41,11 +48,7 @@
 /* from here added for ToDo application*/
 
 body {
-  color: rgb(0, 0, 0);
-  background-image: url("https://www.richardsonsholidayparks.co.uk/wp-content/uploads/2018/04/ThigsToDoHeaderTitle.png");
-  background-repeat: no-repeat;
   background-color: rgb(238, 238, 169);
-  font-family: 'Roboto Slab', Courier, monospace;
 }
 
 #heading {
