@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/Header';
+import AddTask from './components/AddTask';
 import ListTask from './components/ListTask';
 
 const headers = ["My ToDo application"];
@@ -20,6 +21,10 @@ class App extends Component {
             return <Header headerText={header} key={index} />;
           })
         }
+
+        <p>Things to do: 3</p>
+
+        <AddTask />
 
         {
           tasks.map(function (task, index) {

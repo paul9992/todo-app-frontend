@@ -10,13 +10,5 @@ class Header extends Component {
       );
     }
   }
-  
-
-  const styles = {
-    header : {
-        color: "red"
-    }
-  };
-
 
   export default Header;

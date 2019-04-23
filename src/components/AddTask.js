@@ -7,11 +7,11 @@ class AddTask extends Component {
 
         <div id="task-entry-area">
           <form action="/action_page.php">
-              <input type="text" name="" value="">
-              <input type="submit" value="Add">
+              <input type="text" name="" value=""></input>
+              <input type="submit" value="Add"></input>
           </form>
         </div>
-
+        
       );
     }
   }
