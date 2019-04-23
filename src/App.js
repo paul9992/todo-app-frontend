@@ -3,11 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/Header';
+import TaskCount from './components/TaskCount';
 import AddTask from './components/AddTask';
 import ListTask from './components/ListTask';
 
 const headers = ["My ToDo application"];
-const tasks = ["A first task", "A second task", "A third task"];
+const tasks = ["Get up", "Get out of bed", "Drag a comb across my head"];
 
 
 class App extends Component {
@@ -16,17 +17,22 @@ class App extends Component {
     return (
 
       <div className="container">
+        {/* Harriet's example on Slack has the above as className="App" - which is defined in App.css - which is preferred/correct? */}
+
+        {/* Display Header line(s) */}
         {
           headers.map(function (header, index) {
             return <Header headerText={header} key={index} />;
           })
         }
 
+        {/* Display input box/button to add a Task to the list */}
         <AddTask />
 
-        <p id="task-table-area">Things to do: 3</p>
+        {/* Display the count of Tasks */}
+        <TaskCount />
 
- 
+        {/* Display the list of Tasks */}
         {
           tasks.map(function (task, index) {
             return <ListTask taskText={task} key={index} />;
