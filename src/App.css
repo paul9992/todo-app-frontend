@@ -36,8 +36,13 @@
   }
 }
 
-.title {
-  color: rgb(0, 255, 191);
+/* added for ToDo application*/
+body {
+  color: rgb(0, 0, 0);
+  background-image: url("https://www.richardsonsholidayparks.co.uk/wp-content/uploads/2018/04/ThigsToDoHeaderTitle.png");
+  background-repeat: no-repeat;
+  background-color: rgb(238, 238, 169);
+  font-family: 'Roboto Slab', Courier, monospace;
 }
 
 #heading {
@@ -46,3 +51,25 @@
   text-align: center;
   font-size: 400%; 
 }
+
+#task-entry-area {
+  /* width: 300px; */
+  margin: 1em auto 2em auto;
+  text-align: center;
+  font-size: 200%; 
+}
+
+#task-table-area {
+  /* width: 300px; */
+  margin: 0.5em auto 0.5em auto;
+  text-align: center;
+  font-size: 200%; 
+}
+
+/* this @media statement doesn't work as it did in styles.css */
+@media only screen and (max-width: 600px) {
+  h1 {
+      color: yellow;
+  }
+}
+

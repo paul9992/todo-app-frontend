@@ -22,10 +22,11 @@ class App extends Component {
           })
         }
 
-        <p>Things to do: 3</p>
-
         <AddTask />
 
+        <p id="task-table-area">Things to do: 3</p>
+
+ 
         {
           tasks.map(function (task, index) {
             return <ListTask taskText={task} key={index} />;

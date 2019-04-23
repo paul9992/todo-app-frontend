@@ -4,9 +4,8 @@ class ListTask extends Component {
 
     render() {
       return (
-        <div className="row">
-         
-            <div className="row">
+        <div className="row" id="task-table-area">
+
 
                 <div className="col-sm-4 col-md-6">
                     {this.props.taskText}
@@ -25,7 +24,6 @@ class ListTask extends Component {
                 </div>
 
             </div>
-        </div>
 
       );
     }
