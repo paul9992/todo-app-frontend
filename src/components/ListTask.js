@@ -7,20 +7,25 @@ class ListTask extends Component {
         <div className="row">
          
             <div className="row">
-              <div className="col-sm-4 col-md-6">
-                  A first task
-              </div>
-              <div className="col-sm-4 col-md-3">
-                  <form action="/action_page.php">
-                      <input type="submit" value="Done">
-                  </form>
-              </div>
-              <div className="col-sm-4 col-md-3">
-                  <form action="/action_page.php">
-                      <input type="submit" value="Delete">
-                  </form>
-              </div>
+
+                <div className="col-sm-4 col-md-6">
+                    {this.props.taskText}
+                </div>
+
+                <div className="col-sm-4 col-md-3">
+                    <form action="/action_page.php">
+                        <input type="submit" value="Done"></input>
+                    </form>
+                </div>
+
+                <div className="col-sm-4 col-md-3">
+                    <form action="/action_page.php">
+                        <input type="submit" value="Delete"></input>
+                    </form>
+                </div>
+
             </div>
+        </div>
 
       );
     }

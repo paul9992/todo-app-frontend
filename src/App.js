@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 import Header from './components/Header';
+import ListTask from './components/ListTask';
+
+const headers = ["My ToDo application"];
+const tasks = ["A first task", "A second task", "A third task"];
+
 
 class App extends Component {
 
   render() {
-
-    const headers = ["Header One", "VAR is great", "Very amusing"];
-
     return (
+
       <div className="container">
         {
-            headers.map(function(header, index) {
-              return <Header headerText={header} key={index} />;
-            })
+          headers.map(function (header, index) {
+            return <Header headerText={header} key={index} />;
+          })
         }
+
+        {
+          tasks.map(function (task, index) {
+            return <ListTask taskText={task} key={index} />;
+          })
+        }
+
       </div>
+
     );
   }
 }
