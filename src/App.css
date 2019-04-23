@@ -1,3 +1,7 @@
+/* import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto Slab');
+
 .App {
   text-align: center;
 }
@@ -34,4 +38,11 @@
 
 .title {
   color: rgb(0, 255, 191);
+}
+
+#heading {
+  color: red;
+  font-family: 'Roboto', Courier, monospace;
+  text-align: center;
+  font-size: 400%; 
 }
