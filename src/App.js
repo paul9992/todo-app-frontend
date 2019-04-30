@@ -8,37 +8,59 @@ import AddTask from './components/AddTask';
 import ListTask from './components/ListTask';
 
 const headers = ["My ToDo application"];
-const tasks = ["Get up", "Get out of bed", "Drag a comb across my head"];
+/* const taskDescriptionList = ["Get up", "Get out of bed", "Drag a comb across my head"]; */
+
 
 
 class App extends Component {
 
+  /* state must be declared within the app class, not outside/above it */
+  state = {
+    taskDescriptionList: []
+  }
+
+  addTasktoListFunction = (taskDesc) => {
+    let currentTaskList = this.state.taskDescriptionList;
+
+    currentTaskList.push(taskDesc);
+
+    this.setState({taskDescriptionList: currentTaskList})
+  }
+
   render() {
     return (
 
-      <div className="App">
-        {/* Harriet's example on Slack has the above as className="App" - it was originally 'container' in last week's class */}
-        {/* class 'App' which is defined in App.css and I have added styles in there ... which is preferred/correct? */}
+      <div className="container App">
 
+        <div className="row">
         {/* Display Header line(s) */}
         {
           headers.map(function (header, index) {
             return <Header headerText={header} key={index} />;
           })
         }
+        </div>
 
         {/* Display input box/button to add a Task to the list */}
-        <AddTask />
+        <div className="row">
+          <AddTask addTaskFunction={this.addTasktoListFunction}/>
+        </div>
 
         {/* Display the count of Tasks */}
-        <TaskCount />
+        <div className="row">
+            <TaskCount taskCountTotal = {this.state.taskDescriptionList.length} />
+        </div>
 
         {/* Display the list of Tasks */}
-        {
-          tasks.map(function (task, index) {
-            return <ListTask taskText={task} key={index} />;
+        <div className="row">
+          <div className="container">
+          {
+            this.state.taskDescriptionList.map(function (task, index) {
+              return <ListTask taskText={task} key={index} />;
           })
-        }
+          }
+          </div>
+        </div>
 
       </div>
 

@@ -4,9 +4,9 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="heading col-12" >
+      <h1 id="heading" >
         {this.props.headerText}
-      </div>
+      </h1>
     );
   }
 }

@@ -4,9 +4,7 @@ class TaskCount extends Component {
 
   render() {
     return (
-      <p id="task-table-area" className="col-12">
-          Things to do: {this.props.taskCountTotal}
-      </p>
+      <p id="task-table-area">Things to do: 3</p>
     );
   }
 }

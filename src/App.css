@@ -51,7 +51,7 @@ body {
   background-color: rgb(238, 238, 169);
 }
 
-#heading {
+.heading {
   color: red;
   font-family: 'Roboto', Courier, monospace;
   text-align: center;
