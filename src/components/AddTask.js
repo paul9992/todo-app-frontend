@@ -18,6 +18,7 @@ class AddTask extends Component {
     }
 
 
+
     render() {
       return (
 
@@ -32,6 +33,4 @@ class AddTask extends Component {
     }
   }
   
-
-
   export default AddTask;

@@ -8,36 +8,24 @@ import AddTask from './components/AddTask';
 import ListTask from './components/ListTask';
 
 const headers = ["My ToDo application"];
+/* const taskDescriptionList = ["Get up", "Get out of bed", "Drag a comb across my head"]; */
+
+
 
 class App extends Component {
 
   /* state must be declared within the app class, not outside/above it */
   state = {
-    taskList: []
+    taskDescriptionList: []
   }
 
   addTasktoListFunction = (taskDesc) => {
-    let currentTaskList = this.state.taskList;
-
-    // create a new Task Object of the required structure
-    const taskObject = { task: taskDesc, completed: false };
-
-    currentTaskList.push(taskObject);
-
-    //currentTaskList.push(taskDesc);
-
-    this.setState({ taskDescriptionList: currentTaskList })
-  }
-
-  // draft function - not used yet //
-  deleteTaskfromListFunction = (index) => {
     let currentTaskList = this.state.taskDescriptionList;
 
-    currentTaskList.splice(index, 1);
+    currentTaskList.push(taskDesc);
 
-    this.setState({ taskDescriptionList: currentTaskList })
+    this.setState({taskDescriptionList: currentTaskList})
   }
-
 
   render() {
     return (
@@ -45,32 +33,32 @@ class App extends Component {
       <div className="container App">
 
         <div className="row">
-          {/* Display Header line(s) */}
-          {
-            headers.map(function (header, index) {
-              return <Header headerText={header} key={index} />;
-            })
-          }
+        {/* Display Header line(s) */}
+        {
+          headers.map(function (header, index) {
+            return <Header headerText={header} key={index} />;
+          })
+        }
         </div>
 
         {/* Display input box/button to add a Task to the list */}
         <div className="row">
-          <AddTask addTaskFunction={this.addTasktoListFunction} />
+          <AddTask addTaskFunction={this.addTasktoListFunction}/>
         </div>
 
         {/* Display the count of Tasks */}
         <div className="row">
-          <TaskCount taskCountTotal={this.state.taskList.length} />
+            <TaskCount taskCountTotal = {this.state.taskDescriptionList.length} />
         </div>
 
         {/* Display the list of Tasks */}
         <div className="row">
           <div className="container">
-            {
-              this.state.taskList.map(function (task, index) {
-                return <ListTask taskObject={task} key={index} />;
-              })
-            }
+          {
+            this.state.taskDescriptionList.map(function (task, index) {
+              return <ListTask taskText={task} key={index} />;
+          })
+          }
           </div>
         </div>
 
