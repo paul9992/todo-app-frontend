@@ -14,10 +14,12 @@ const headers = ["My ToDo application"];
 class App extends Component {
 
   /* state must be declared within the app class, not outside/above it */
+  /* at this stage we just declare an array of objects - we don't define the structure of the objects within it */
   state = {
     taskList: []
   }
 
+  /* function to ADD a task to the list */
   addTasktoListFunction = (taskDesc) => {
     let currentTaskList = this.state.taskList;
 
@@ -32,7 +34,8 @@ class App extends Component {
     this.setState({ taskList: currentTaskList })
   }
 
-
+  /* function to DELETE a task from list (using SPLICE) */
+  /*
   deleteTaskfromListFunction = (task_id) => {
     let currentTaskList = this.state.taskList;
 
@@ -46,7 +49,22 @@ class App extends Component {
     }
     this.setState({ taskList: currentTaskList })
   }
+  */ 
 
+  /* function to DELETE a task from list (using FILTER) */
+  deleteTaskfromListFunction = (task_id) => {
+
+    let currentTaskList = [];
+    
+    currentTaskList = this.state.taskList.filter
+    (val => {
+      return val.id !== task_id;
+    })
+
+    this.setState({ taskList: currentTaskList })
+  }
+
+  /* function to COMPLETE a task in the list */
   completeTaskinListFunction = (task_id) => {
 
     let currentTaskList = this.state.taskList;
@@ -59,11 +77,11 @@ class App extends Component {
         break;
       }
     }
-
     this.setState({ taskList: currentTaskList })
   }
 
 
+  /* main RENDER block */
   render() {
     return (
 
@@ -78,7 +96,7 @@ class App extends Component {
           }
         </div>
 
-        {/* Display input box/button to add a Task to the list */}
+        {/* Display input box & button to add a Task to the list */}
         <div className="row">
           <AddTask addTaskFunction={this.addTasktoListFunction} />
         </div>
@@ -92,9 +110,8 @@ class App extends Component {
         <div className="row">
           <div className="container">
             {
+              /* ensure use the =>notation below rather than 'function' keyword  - changes scope of 'this' */
               this.state.taskList.map( (task, index) => {
-  /*              return <ListTask taskObject={task} key={index} />;  */
-  /*              return <ListTask deleteTaskFunction={this.deleteTaskfromListFunction} taskObject={task} key={index} />; */
                   return <ListTask deleteTaskFunction={this.deleteTaskfromListFunction} completeTaskFunction={this.completeTaskinListFunction} taskObject={task} key={index} />; 
               })
             }

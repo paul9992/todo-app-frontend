@@ -13,7 +13,7 @@ class ListTask extends Component {
 
   render() {
 
-    /* determine how the Complete button will look depending on whether Task is complete */
+    /* determine how the Complete button will look depending on whether Task is complete ('conditional rendering')*/
     let completeButtonHTML
 
     if (this.props.taskObject.completed) {
@@ -40,7 +40,6 @@ class ListTask extends Component {
         </div>
 
       </div>
-
 
     );
   }
