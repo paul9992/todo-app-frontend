@@ -7,6 +7,8 @@ import TaskCount from './components/TaskCount';
 import AddTask from './components/AddTask';
 import ListTask from './components/ListTask';
 
+import uuidv1 from 'uuid/v1';
+
 const headers = ["My ToDo application"];
 
 class App extends Component {
@@ -20,22 +22,34 @@ class App extends Component {
     let currentTaskList = this.state.taskList;
 
     // create a new Task Object of the required structure
-    const taskObject = { task: taskDesc, completed: false };
+    const taskObject = { 
+      id: uuidv1(),
+      task: taskDesc, 
+      completed: false };
 
     currentTaskList.push(taskObject);
 
     //currentTaskList.push(taskDesc);
 
-    this.setState({ taskDescriptionList: currentTaskList })
+    this.setState({ taskList: currentTaskList })
   }
 
   // draft function - not used yet //
-  deleteTaskfromListFunction = (index) => {
-    let currentTaskList = this.state.taskDescriptionList;
+  deleteTaskfromListFunction = (task_id) => {
+    let currentTaskList = this.state.taskList;
+    alert ("deleting task");
 
-    currentTaskList.splice(index, 1);
+    for (let i=0; i<currentTaskList.length; i++)
+    {
+      if (currentTaskList[i].id === task_id)
+      {
+        alert ("deleting task" + i);
+        currentTaskList.splice(i, 1);
+        break;
+      }
+    }
 
-    this.setState({ taskDescriptionList: currentTaskList })
+    this.setState({ taskList: currentTaskList })
   }
 
 
@@ -67,8 +81,9 @@ class App extends Component {
         <div className="row">
           <div className="container">
             {
-              this.state.taskList.map(function (task, index) {
-                return <ListTask taskObject={task} key={index} />;
+              this.state.taskList.map( (task, index) => {
+  /*              return <ListTask taskObject={task} key={index} />;  */
+                  return <ListTask deleteTaskFunction={this.deleteTaskfromListFunction} taskObject={task} key={index} />;
               })
             }
           </div>
