@@ -29,22 +29,33 @@ class App extends Component {
 
     currentTaskList.push(taskObject);
 
-    //currentTaskList.push(taskDesc);
-
     this.setState({ taskList: currentTaskList })
   }
 
-  // draft function - not used yet //
+
   deleteTaskfromListFunction = (task_id) => {
     let currentTaskList = this.state.taskList;
-    alert ("deleting task");
 
     for (let i=0; i<currentTaskList.length; i++)
     {
       if (currentTaskList[i].id === task_id)
       {
-        alert ("deleting task" + i);
         currentTaskList.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({ taskList: currentTaskList })
+  }
+
+  completeTaskinListFunction = (task_id) => {
+
+    let currentTaskList = this.state.taskList;
+
+    for (let i=0; i<currentTaskList.length; i++)
+    {
+      if (currentTaskList[i].id === task_id)
+      {
+        currentTaskList[i].completed = true;
         break;
       }
     }
@@ -83,7 +94,8 @@ class App extends Component {
             {
               this.state.taskList.map( (task, index) => {
   /*              return <ListTask taskObject={task} key={index} />;  */
-                  return <ListTask deleteTaskFunction={this.deleteTaskfromListFunction} taskObject={task} key={index} />;
+  /*              return <ListTask deleteTaskFunction={this.deleteTaskfromListFunction} taskObject={task} key={index} />; */
+                  return <ListTask deleteTaskFunction={this.deleteTaskfromListFunction} completeTaskFunction={this.completeTaskinListFunction} taskObject={task} key={index} />; 
               })
             }
           </div>

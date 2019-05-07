@@ -10,7 +10,6 @@
 
   /* put this in from 'body' section of old styles.css */
   color: rgb(0, 0, 0);
-  background-image: url("https://www.richardsonsholidayparks.co.uk/wp-content/uploads/2018/04/ThigsToDoHeaderTitle.png");
   background-repeat: no-repeat;
   font-family: 'Oswald', Courier, monospace;
 }
@@ -76,4 +75,12 @@ body {
   margin: 0.5em auto 0.5em auto;
   text-align: center;
   font-size: 200%;
+}
+
+.grey_button {
+  background-color: grey;
+}
+
+.green_button {
+  background-color: green;
 }
