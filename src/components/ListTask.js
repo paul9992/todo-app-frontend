@@ -4,11 +4,11 @@ class ListTask extends Component {
 
 
   deleteTaskButtonClicked = () => {
-    this.props.deleteTaskFunction(this.props.taskObject.id);
+    this.props.deleteTaskFunction(this.props.taskObject.taskID);
   }
 
   completeTaskButtonClicked = () => {
-    this.props.completeTaskFunction(this.props.taskObject.id);
+    this.props.completeTaskFunction(this.props.taskObject.taskID);
   }
 
   render() {
@@ -28,7 +28,7 @@ class ListTask extends Component {
       <div className="row" id="task-table-area">
 
         <div className="col-sm-12 col-md-6">
-          {this.props.taskObject.task}
+          {this.props.taskObject.description}
         </div>
 
         <div className="col-sm-6 col-md-3">
