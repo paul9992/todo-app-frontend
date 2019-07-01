@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import Header from './components/Header';
 import TaskCount from './components/TaskCount';
 import AddTask from './components/AddTask';
@@ -62,7 +61,7 @@ class App extends Component {
 
   }
 
-  /* function to DELETE a task from list (using SPLICE) */
+  /*  original function to DELETE a task from list (using SPLICE) */
   /*
   deleteTaskfromListFunction = (task_id) => {
     let currentTaskList = this.state.taskList;
@@ -81,17 +80,6 @@ class App extends Component {
 
   /* function to DELETE a task from list (using FILTER) */
   deleteTaskfromListFunction = (task_id) => {
-
-    /*
-  
-    currentTaskList = this.state.taskList.filter
-    (val => {
-      return val.id !== task_id;
-    })
-
-    this.setState({ taskList: currentTaskList })
-    
-  */
     
     axios.delete("https://xmuy4ztnh1.execute-api.eu-west-2.amazonaws.com/dev/tasks/" + task_id)
       .then(result => {
@@ -113,20 +101,6 @@ class App extends Component {
 
   /* function to COMPLETE a task in the list */
   completeTaskinListFunction = (task_id) => {
-
-    /*
-    let currentTaskList = this.state.taskList;
-
-    for (let i=0; i<currentTaskList.length; i++)
-    {
-      if (currentTaskList[i].id === task_id)
-      {
-        currentTaskList[i].completed = true;
-        break;
-      }
-    }
-    this.setState({ taskList: currentTaskList })
-    */
 
    // create a new Task Object of the required structure
    const taskObject = {
